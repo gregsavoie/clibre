@@ -1,0 +1,156 @@
+{% load static %}
+
+/* style du navbar */
+
+/* style de la page d'acceuil */
+
+/* style de la page a propos */
+
+/* style de la page nouvlles */
+/* style de la page contact */
+
+body {
+    background-color: #f4f4f0;
+}
+
+.wrapper {
+    padding: 0 0;
+    margin: 0 0;
+}
+
+.content {
+    background-image: url({% static "website/img/bg3.png" %});
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: auto;
+}
+
+.page-1ere {
+    margin-top: 20%;
+    background-color: transparent;
+}
+
+.page-1ere {
+    text-align: center;
+}
+
+blockquote {
+    margin-right: 2%;
+}
+
+.logo, .navbar-brand {
+    padding: 6px 0px;
+    margin-left: 15%;
+}
+
+#myNavbar {
+    border: none;
+}
+
+.navbar {
+    background-color: transparent;
+    height: 70px;
+    border: none;
+}
+
+.myNavbar ul li:not(.nav-filler) {
+    background-color: #333333;
+    border-radius: 10%;
+}
+
+.myNavbar ul li:not(.nav-filler):hover {
+    background-color: #fff;
+}
+
+.myNavbar ul li:not(.nav-filler):hover a {
+    color: #333333;
+}
+
+.myNavbar ul li:not(.nav-filler) a {
+    color: #fff;
+}
+
+/* retier le dashed border quand on clique... */
+.myNavbar ul li:not(.nav-filler) a:focus, .navbar-brand:focus {
+    outline: 0;
+}
+
+.myNavbar ul {
+    margin-top:1%;
+}
+
+#myNavbar ul .link-active {
+    background-color: #fff;
+}
+
+#myNavbar ul .link-active a {
+    color: #333333;
+}
+
+.navbar-right {
+    margin-right: 10%;
+}
+
+.nav-filler {
+    color: transparent;
+    visibility: hidden;
+}
+
+#a-propos {
+    background-color: #f4f4f0; 
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+#a-propos h1 {
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+#nouvelles {
+    height: 1000px;
+}
+
+#contact {
+    height: 1000px;
+}
+
+@media only screen and (max-width : 860px),
+only screen and (max-device-width : 860x){
+    .navbar-right {
+        margin-right: 2%;
+    }
+}
+
+@media only screen and (max-width : 767px),
+only screen and (max-device-width : 767x){
+    .navbar {
+        height: 60px;
+    }
+
+    .navbar-right {
+        margin-right: 0;
+    }
+
+    #myNavbar ul {
+        margin-top: 0;
+    }
+
+    #myNavbar ul li:not(.nav-filler) {
+        border-radius: 0;
+    }
+
+    .logo, .navbar-brand {
+        padding: 4px 0px;
+        margin-left: 2%;
+    }
+
+    button.navbar-toggle {
+        background-color: #333333;
+        border: none;
+        margin-top: 3%;
+    }
+}
+
