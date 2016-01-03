@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static "odipApp/css/index.css" %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <title>Clibre - UQAM</title>
+        <style>
+            .wrapper {
+                padding: 0 0;
+            }
+
+            .content {
+                background-image: url({% static "website/img/bg3.png" %});
+                background-position: center;
+                background-size: cover;
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                height: auto;
+            }
+
+            .jumbotron {
+                margin-top: 20%;
+                background-color: transparent;
+            }
+
+            .jumbotron h1 {
+                margin-left: 27%;
+                font-size: 4em;
+            }
+
+            blockquote {
+                margin-right: 2%;
+            }
+
+            .logo, .navbar-brand {
+                padding: 6px 0px;
+                margin-left: 15%;
+            }
+
+            #myNavbar {
+                border: none;
+            }
+
+            .navbar {
+                background-color: transparent;
+                height: 70px;
+                border: none;
+            }
+
+            #myNavbar ul li:not(.nav-filler) {
+                background-color: #333333;
+                border-radius: 10%;
+            }
+
+            /*
+            #myNavbar ul li:not(.nav-filler):hover {
+                background-color: #fff;
+            }
+
+            #myNavbar ul li:not(.nav-filler):hover a {
+                color: #333333;
+            }
+            */
+
+            #myNavbar ul li:not(.nav-filler) a {
+                color: #fff;
+            }
+
+            /* retier le dashed border quand on clique... */
+            #myNavbar ul li:not(.nav-filler) a:focus, .navbar-brand:focus {
+                outline: 0;
+            }
+
+            #myNavbar ul {
+                margin-top:1%;
+            }
+
+            .navbar-right {
+                margin-right: 10%;
+            }
+
+            .nav-filler {
+                color: transparent;
+                visibility: hidden;
+            }
+
+            #a-propos {
+                height: 1000px;
+            }
+
+            #nouvelles {
+                height: 1000px;
+            }
+            #contact {
+                height: 1000px;
+            }
+
+            @media only screen and (max-width : 860px),
+            only screen and (max-device-width : 860x){
+                .navbar-right {
+                    margin-right: 2%;
+                }
+            }
+
+            @media only screen and (max-width : 767px),
+            only screen and (max-device-width : 767x){
+                .navbar {
+                    height: 60px;
+                }
+
+                .navbar-right {
+                    margin-right: 0;
+                }
+
+                #myNavbar ul {
+                    margin-top: 0;
+                }
+
+                #myNavbar ul li:not(.nav-filler) {
+                    border-radius: 0;
+                }
+
+                .logo, .navbar-brand {
+                    padding: 4px 0px;
+                    margin-left: 2%;
+                }
+
+                button.navbar-toggle {
+                    background-color: #333333;
+                    border: none;
+                    margin-top: 3%;
+                }
+            }
+
+        </style>
+        <script>
+            var resize = function() {
+                if($(".content").width() > $(window).width()) {
+                    $(".content").width($(window).width());
+                }
+                if($(window).width() < 754) {
+                    $(".nav-filler").remove();
+                } else {
+                    if($(".nav-filler").length == 0) {
+                        var fillers = $("<li></li>").addClass("nav-filler").text("filler filler");
+                    }
+                    $(".nav-non-filler").before(fillers);
+                }
+                if($(".content").height() < $(window).height()) {
+                    $(".content").height($(window).height());
+                }
+            };
+            
+            var scrollUpResponse = function() {
+                if($(window).scrollTop() < $(".content").height() - 70) {
+                    $(window).unbind("scroll", scrollUpResponse);
+                    $(".navbar").css("background-color", "transparent");
+                    $(window).bind("scroll", scrollDownResponse);
+                }
+            }
+
+            var scrollDownResponse = function() {
+                if($(window).scrollTop() > $(".content").height() - 70) {
+                    $(window).unbind("scroll", scrollDownResponse);
+                    $(".navbar").css("background-color", "#333333");
+                    $(window).bind("scroll", scrollUpResponse);
+                }
+            };
+
+            function scrollTo(id) {
+                if(id == "haut") {
+                    id = "body"
+                } 
+                $("html, body").animate({
+                        scrollTop: $(id).offset().top - 60
+                }, 500);
+            };
+
+            var scrollSpy = function() {
+                if($(window).scrollTop() < $("#a-propos").offset().top - 80) {
+                    $("#link-a-propos").css("background-color", "#333333");
+                    $("#link-a-propos a").css("color", "#fff");
+                    $("#link-contact").css("background-color", "#333333");
+                    $("#link-contact a").css("color", "#fff");
+                    $("#link-nouvelles").css("background-color", "#333333");
+                    $("#link-nouvelles a").css("color", "#fff");
+                }
+
+                if($(window).scrollTop() > $("#a-propos").offset().top - 80) {
+                    $("#link-a-propos").css("background-color", "#fff");
+                    $("#link-a-propos a").css("color", "#333333");
+                    $("#link-contact").css("background-color", "#333333");
+                    $("#link-contact a").css("color", "#fff");
+                    $("#link-nouvelles").css("background-color", "#333333");
+                    $("#link-nouvelles a").css("color", "#fff");
+                }
+                if($(window).scrollTop() > $("#nouvelles").offset().top - 80) {
+                    $("#link-nouvelles").css("background-color", "#fff");
+                    $("#link-nouvelles a").css("color", "#333333");
+                    $("#link-a-propos").css("background-color", "#333333");
+                    $("#link-a-propos a").css("color", "#fff");
+                    $("#link-contact").css("background-color", "#333333");
+                    $("#link-contact a").css("color", "#fff");
+                }
+                if($(window).scrollTop() > $("#contact").offset().top - 80) {
+                    $("#link-contact").css("background-color", "#fff");
+                    $("#link-contact a").css("color", "#333333");
+                    $("#link-a-propos").css("background-color", "#333333");
+                    $("#link-a-propos a").css("color", "#fff");
+                    $("#link-nouvelles").css("background-color", "#333333");
+                    $("#link-nouvelles a").css("color", "#fff");
+                }
+            };
+
+            $(document).ready(function() {
+                if($(".content").width() > $(window).width()) {
+                    $(".content").width($(window).width());
+                }
+                if($(".content").height() < $(window).height()) {
+                    $(".content").height($(window).height());
+                    scrollDownResponse();
+                }
+                if($(window).width() < 754) {
+                    $(".nav-filler").remove();
+                }
+                $(window).bind("resize", resize);
+                $(window).bind("scroll", scrollDownResponse);
+                $(window).bind("scroll", scrollSpy);
+            });
+        </script>
+    </head>
+
+    <body data-spy="scroll" data-target=".navbar" data-offset="70">
+        <div class="container-fluid wrapper">
+            <div class="panel content">
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="javascript:scrollTo('haut')"><img class="logo" src="{% static "website/img/clibre_logo.png" %}" width="95"/></a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li id="link-a-propos" class="nav-non-filler"><a href="javascript:scrollTo('#a-propos')">À propos</a></li>
+                                <li class="nav-filler">filler filler</li>
+                                <li id="link-nouvelles" class="nav-non-filler"><a href="javascript:scrollTo('#nouvelles')">Nouvelles</a></li>
+                                <li class="nav-filler">filler filler</li>
+                                <li id="link-contact" class="nav-non-filler"><a href="javascript:scrollTo('#contact')">Contact</a></li>
+                                <li class="nav-filler">filler filler</li>
+                                <li class="nav-non-filler"><a href="#">Wiki</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="jumbotron">
+                    <h1>Clibre AESS UQAM</h1>
+                    <div class="row">
+                        <div class="col-md-6">
+                        </div>
+                        <div class="col-md-6">
+                            <blockquote class="blockquote-reverse">
+                                <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et dignissim felis, sed tempor dui. Vestibulum suscipit, leo non viverra efficitur, justo metus ultrices tortor.</em>
+                                <footer>Lorem ipsum</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel" id="a-propos">
+                <h1>À propos</h1>
+            </div>
+            <div class="panel" id="nouvelles">
+                <h1>Nouvelles</h1>
+            </div>
+            <div class="panel" id="contact">
+                <h1>Contact</h1>
+            </div>
+        </div>
+    </body>
+</html>
