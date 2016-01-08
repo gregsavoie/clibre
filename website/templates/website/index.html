@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     {% load static %}
+    {% load widget_tweaks %}
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,71 +13,156 @@
                 background-image: url({% static "website/img/bg3.png" %});
             }
         </style>
-
         <link rel="stylesheet" href="{% static "website/css/index.css" %}">
         <script src="{% static "website/js/index.js" %}"></script>
         <title>Clibre - UQAM</title>
     </head>
 
     <body>
-        <div class="container-fluid wrapper">
-            <div class="panel content">
-                <nav class="navbar navbar-inverse navbar-fixed-top">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="javascript:scrollTo('haut')"><img class="logo" src="{% static "website/img/clibre_logo.png" %}" width="95"/></a>
-                        </div>
-                        <div class="collapse navbar-collapse myNavbar" id="myNavbar">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li id="link-a-propos" class="nav-non-filler"><a href="javascript:scrollTo('#a-propos')">À propos</a></li>
-                                <li class="nav-filler">filler filler</li>
-                                <li id="link-nouvelles" class="nav-non-filler"><a href="javascript:scrollTo('#nouvelles')">Nouvelles</a></li>
-                                <li class="nav-filler">filler filler</li>
-                                <li id="link-contact" class="nav-non-filler"><a href="javascript:scrollTo('#contact')">Contact</a></li>
-                                <li class="nav-filler">filler filler</li>
-                                <li class="nav-non-filler"><a href="#">Wiki</a></li>
-                            </ul>
+        <!-- acceuil -->
+        <div class="container-fluid wrapper-wrapper">
+            <div class="panel wrapper-wrapper">
+                <div class="panel-body wrapper-wrapper">
+                    <div class="container-fluid wrapper content">
+                        <nav class="navbar navbar-inverse navbar-fixed-top">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="navbar-brand" href="javascript:scrollTo('haut')"><img class="logo" src="{% static "website/img/clibre_logo.png" %}" width="95"/></a>
+                                </div>
+                                <div class="collapse navbar-collapse myNavbar" id="myNavbar">
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li id="link-a-propos" class="nav-non-filler links"><a href="javascript:scrollTo('.a-propos')">À propos</a></li>
+                                        <li class="nav-filler">filler filler</li>
+                                        <li id="link-nouvelles" class="nav-non-filler links"><a href="javascript:scrollTo('.nouvelles')">Nouvelles</a></li>
+                                        <li class="nav-filler">filler filler</li>
+                                        <li id="link-contact" class="nav-non-filler links"><a href="javascript:scrollTo('.contact')">Contact</a></li>
+                                        <li class="nav-filler">filler filler</li>
+                                        <li class="nav-non-filler"><a href="http://www.clibre.uqam.ca">Wiki</a></li>
+                                        <li class="nav-filler">filler filler</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                        <div class="jumbotron page-1ere">
+                            <h1>Clibre AESS UQAM</h1>
+                            <div class="row">
+                                <div class="col-md-6">
+                                </div>
+                                <div class="col-md-6">
+                                    <blockquote class="blockquote-reverse">
+                                        <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et dignissim felis, sed tempor dui. Vestibulum suscipit, leo non viverra efficitur, justo metus ultrices tortor.</em>
+                                        <footer>Lorem ipsum</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </nav>
-                <div class="jumbotron page-1ere">
-                    <h1>Clibre AESS UQAM</h1>
-                    <div class="row">
-                        <div class="col-md-6">
+
+                    <!-- a propos -->
+                    <div class="container-fluid wrapper a-propos">
+                            <h1>Qu'est-ce que le Clibre?</h1>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="panel">
+                                        <div class="panel-body">
+                                            <img src="{% static "website/img/icon.png"%}" class="img-circle img-responsive" width="150">
+                                            <h3>Qui sommes-nous</h3>
+                                            <p class="text-justify"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultricies odio eget lorem consequat mollis. Suspendisse et arcu eget massa vestibulum feugiat eget a lectus. Praesent blandit convallis rhoncus. Morbi faucibus mi a massa iaculis, sit amet porta turpis convallis.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel">
+                                        <div class="panel-body">
+                                            <img src="{% static "website/img/icon.png"%}" class="img-circle img-responsive" width="150">
+                                            <h3>Que faisons-nous</h3>
+                                            <p class="text-justify"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultricies odio eget lorem consequat mollis. Suspendisse et arcu eget massa vestibulum feugiat eget a lectus. Praesent blandit convallis rhoncus. Morbi faucibus mi a massa iaculis, sit amet porta turpis convallis.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel">
+                                        <div class="panel-body">
+                                            <img src="{% static "website/img/icon.png"%}" class="img-circle img-responsive" width="150">
+                                            <h3>Comment aider</h3>
+                                            <p class="text-justify"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultricies odio eget lorem consequat mollis. Suspendisse et arcu eget massa vestibulum feugiat eget a lectus. Praesent blandit convallis rhoncus. Morbi faucibus mi a massa iaculis, sit amet porta turpis convallis.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <blockquote class="blockquote-reverse">
-                                <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et dignissim felis, sed tempor dui. Vestibulum suscipit, leo non viverra efficitur, justo metus ultrices tortor.</em>
-                                <footer>Lorem ipsum</footer>
-                            </blockquote>
+                    </div>
+
+                    <!-- nouvelles -->
+                    <div class="container-fluid wrapper nouvelles">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Nouvelles
+                                    </div>
+                                    <div class="panel-body">
+                                        {% if posts %}
+                                            {% for post in posts %}
+                                                <div class="well">
+                                                    <p>{{ post.post_contenu }}</p>
+                                                    <p class="text-right">{{ post.post_date }}</p>
+                                                </div>
+                                            {% endfor %}
+                                        {% else %}
+                                            <p><em>Rien de nouveau au Clibre pour le moment...</em></p>
+                                        {% endif%}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h1>&iquest;Qué pasa au Clibre?</h1>
+                                <h3 class="text-center">Vous avez un projet, un évênement ou une question qui concerne le logiciel libre?</h3>
+                                <a href="javascript:scrollTo('.contact')" class="btn-lg btn-primary contactez-nous" role="button">Contactez nous!</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- contact -->
+                    <div class="container-fluid wrapper contact">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h1 class="text-center">Le Clibre est heureux d'entendre ce que vous avez à dire.</h1>
+                                <br/>
+                                <br/>
+                                <h3 class="text-center">Écrivez-nous!</h3>
+                            </div>
+                            <div class="col-md-4 contact-block">
+                                <form role="form" action="javascript:merci()" method="post">
+                                    {% csrf_token %}
+                                    {% for field in form %}
+                                        <div class="form-group">
+                                            <label for="{{ field.auto_id }}">{{ field.label }}: </label>
+                                            {{ field|add_class:"form-control" }}
+                                        </div>
+                                    {% endfor %}
+                                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                                </form>
+                            </div>
+                            <div class="col-md-4">
+                                <br/>
+                                <br/>
+                                <h2 class="text-center">Ou rejoignez-nous sur</h2>
+                                <a href="http://www.facebook.com" class="sm-icon sm-icon1"><img src="{% static "website/img/icon.png" %}" class="img-circle img-responsive" width="40"></a>
+                                <a href="http://www.github.com" class="sm-icon sm-icon2"><img src="{% static "website/img/icon.png" %}" class="img-circle img-responsive" width="40"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="container-fluid wrapper">
-            <div class="panel" id="a-propos">
-                <h1>Qu'est-ce que le Clibre?</h1>
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="{% static "website/img/icon.png"%}" class="img-circle img-responsive icon" width="150">
-                        <p class="text-justify"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis egestas erat. Integer dictum libero tortor. Maecenas vulputate elementum lacus in vehicula. Pellentesque iaculis nisi mattis maximus luctus. Fusce neque urna, gravida sed maximus ut, dignissim non justo. Quisque ultrices mollis orci quis blandit. Quisque cursus quam nunc, vel luctus neque aliquet nec. Donec molestie blandit justo, at bibendum velit porttitor vitae. Nam vitae lobortis risus. Vestibulum ut est arcu. Morbi pretium non nunc a aliquet. In nisl diam, efficitur.</p>
-                    </div>
-                    <div class="col-md-6">
-                    </div>
+                <div class="panel-footer">
+                    <p>Clibre 2016<p>
                 </div>
             </div>
-            <div class="panel" id="nouvelles">
-                <h1>Nouvelles</h1>
-            </div>
-            <div class="panel" id="contact">
-                <h1>Contact</h1>
-            </div>
         </div>
+
     </body>
 </html>
