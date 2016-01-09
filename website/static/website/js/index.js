@@ -25,11 +25,6 @@ function merci() {
 };
 
 var resize = function() {
-    /*
-    if($(".content").width() > $(window).width()) {
-        $(".content").width($(window).width());
-    }
-    */
     if($(window).width() < 754) {
         $(".nav-filler").remove();
         $(".links").bind("click", function() {
@@ -42,17 +37,12 @@ var resize = function() {
         }
         $(".links").unbind("click");
     }
-    /*
-    if($(".content").height() < $(window).height()) {
-        $(".content").height($(window).height());
-    }
-    */
 };
 
 var scrollUpResponse = function() {
     if($(window).width() < 754) {
     }
-    if($(window).scrollTop() < $(".content").height() - 70) {
+    if($(window).scrollTop() < $(".acceuil").height() - 70) {
         $(window).unbind("scroll", scrollUpResponse);
         $(".navbar").css("background-color", "transparent");
         $(window).bind("scroll", scrollDownResponse);
@@ -60,7 +50,7 @@ var scrollUpResponse = function() {
 }
 
 var scrollDownResponse = function() {
-    if($(window).scrollTop() > $(".content").height() - 70) {
+    if($(window).scrollTop() > $(".acceuil").height() - 70) {
         $(window).unbind("scroll", scrollDownResponse);
         $(".navbar").css("background-color", "#333333");
         $(window).bind("scroll", scrollUpResponse);
@@ -101,26 +91,8 @@ var scrollSpy = function() {
 };
 
 $(document).ready(function() {
-    /*
-    if($(".content").width() > $(window).width()) {
-        $(".content").width($(window).width());
-    }
-    if($(".content").height() < $(window).height()) {
-        $(".content").height($(window).height());
-        scrollDownResponse();
-    }
-    if($(".a-propos").height() < $(window).height()) {
-        $(".a-propos").height($(window).height());
-    }
-    if($(".nouvelles").height() < $(window).height()) {
-        $(".nouvelles").height($(window).height());
-    }
-    if($(".contact").height() < $(window).height()) {
-        $(".contact").height($(window).height());
-    }
-    */
     $(".wrapper").css("min-height", $(window).height() - 50);
-    $(".content").css("min-height", $(window).height());
+    $(".acceuil").css("min-height", $(window).height());
     if($(window).width() < 754) {
         $(".nav-filler").remove();
         $(".links").bind("click", function() {
