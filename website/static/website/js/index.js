@@ -1,3 +1,14 @@
+function validerChamps(nom, courriel, message) {
+    if(nom) {
+        if(courriel) {
+            if(message) {
+                return true;
+            }
+        }
+    }
+    return false;
+};
+
 function merci() {
     var url = "/merci/";
     var datatype = "json";
@@ -5,23 +16,28 @@ function merci() {
     var nom = document.getElementById("id_nom").value;
     var courriel = document.getElementById("id_courriel").value;
     var message = document.getElementById("id_message").value;
-    $.ajax({
-        url:url,
-        datatype:datatype,
-        type:type,
-        data: {"nom":nom, "courriel":courriel, "message":message},
-        success: function(data) {
-            alert("success");
-            $(".contact-block").children().remove();
-            var merci = $("<h1></h1>").attr("class", "text-center").text("Merci " + nom + "!");
-            var para = $("<p></p>").attr("class", "text-center").text("Votre message a été transmis.");
-            var wrapper = $("<div></div>").append(merci).append(para).css("margin-top", "25%");
-            $(".contact-block").append(wrapper);
-        },
-        error: function(data) {
-            alert("fail");
-        }
-    });
+    if(validerChamps(nom, courriel, message)) {
+        $.ajax({
+            url:url,
+            datatype:datatype,
+            type:type,
+            data: {"nom":nom, "courriel":courriel, "message":message},
+            success: function(data) {
+                $(".contact-block").children().remove();
+                var merci = $("<h1></h1>").attr("class", "text-center").text("Merci " + nom + "!");
+                var para = $("<p></p>").attr("class", "text-center").text("Votre message a été transmis.");
+                var wrapper = $("<div></div>").append(merci).append(para).css("margin-top", "25%");
+                $(".contact-block").append(wrapper);
+            },
+            error: function(data) {
+            }
+        });
+        var nom = document.getElementById("id_nom").value = "";
+        var courriel = document.getElementById("id_courriel").value = "";
+        var message = document.getElementById("id_message").value = "";
+    } else {
+        $(".msg-erreur").css("visibility", "visible");
+    }
 };
 
 var resize = function() {
@@ -93,6 +109,7 @@ var scrollSpy = function() {
 $(document).ready(function() {
     $(".wrapper").css("min-height", $(window).height() - 50);
     $(".acceuil").css("min-height", $(window).height());
+    scrollDownResponse();
     if($(window).width() < 754) {
         $(".nav-filler").remove();
         $(".links").bind("click", function() {

@@ -189,6 +189,12 @@ blockquote {
     opacity: 0.4;
 }
 
+.msg-erreur {
+    color: red;
+    font-size: 0.85em;
+    visibility: hidden;
+}
+
 /* style du footer */
 
 .container-fluid .footer {
@@ -227,6 +233,7 @@ only screen and (max-device-width : 991x){
     .contact h2 {
         margin-bottom: 6%;
     }
+
 }
 
 @media only screen and (max-width : 767px),
