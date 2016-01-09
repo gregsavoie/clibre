@@ -1,0 +1,31 @@
+{% load static %}
+{% load widget_tweaks %}
+<div class="container-fluid wrapper contact">
+    <div class="row">
+        <div class="col-md-4">
+            <h1 class="text-center">Le Clibre est heureux d'entendre ce que vous avez à dire.</h1>
+            <br/>
+            <br/>
+            <h3 class="text-center">Écrivez-nous!</h3>
+        </div>
+        <div class="col-md-4 contact-block">
+            <form role="form" action="javascript:merci()" method="get">
+                {% for field in form %}
+                    <div class="form-group">
+                        <label for="{{ field.auto_id }}">{{ field.label }}: </label>
+                        {{ field|add_class:"form-control" }}
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <br/>
+            <br/>
+            <h2 class="text-center">Ou rejoignez-nous sur</h2>
+            <a href="http://www.facebook.com" class="sm-icon sm-icon1"><img src="{% static "website/img/icon.png" %}" class="img-circle img-responsive" width="40"></a>
+            <a href="http://www.github.com" class="sm-icon sm-icon2"><img src="{% static "website/img/icon.png" %}" class="img-circle img-responsive" width="40"></a>
+        </div>
+    </div>
+</div>
+</div>

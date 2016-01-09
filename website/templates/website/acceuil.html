@@ -1,0 +1,40 @@
+{% load static %}
+<div class="container-fluid wrapper content">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="javascript:scrollTo('haut')"><img class="logo" src="{% static "website/img/clibre_logo.png" %}" width="95"/></a>
+            </div>
+            <div class="collapse navbar-collapse myNavbar" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="link-a-propos" class="nav-non-filler links"><a href="javascript:scrollTo('.a-propos')">À propos</a></li>
+                    <li class="nav-filler">filler filler</li>
+                    <li id="link-nouvelles" class="nav-non-filler links"><a href="javascript:scrollTo('.nouvelles')">Nouvelles</a></li>
+                    <li class="nav-filler">filler filler</li>
+                    <li id="link-contact" class="nav-non-filler links"><a href="javascript:scrollTo('.contact')">Contact</a></li>
+                    <li class="nav-filler">filler filler</li>
+                    <li class="nav-non-filler"><a href="http://www.clibre.uqam.ca">Wiki</a></li>
+                    <li class="nav-filler">filler filler</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron page-1ere">
+        <h1>Clibre AESS UQAM</h1>
+        <div class="row">
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-6">
+                <blockquote class="blockquote-reverse">
+                    <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et dignissim felis, sed tempor dui. Vestibulum suscipit, leo non viverra efficitur, justo metus ultrices tortor.</em>
+                    <footer>Lorem ipsum</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>

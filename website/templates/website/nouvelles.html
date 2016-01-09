@@ -1,0 +1,28 @@
+{% load static %}
+<div class="container-fluid wrapper nouvelles">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Nouvelles
+                </div>
+                <div class="panel-body">
+                    {% if posts %}
+                        {% for post in posts %}
+                            <div class="well">
+                                <p>{{ post.post_contenu }}</p>
+                                <p class="text-right">{{ post.post_date }}</p>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p><em>Rien de nouveau au Clibre pour le moment...</em></p>
+                    {% endif%}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h1>&iquest;Qué pasa au Clibre?</h1>
+            <h3 class="text-center">Vous avez un projet, un évênement ou une question qui concerne le logiciel libre?</h3>
+            <a href="javascript:scrollTo('.contact')" class="btn-lg btn-primary contactez-nous" role="button">Contactez nous!</a>
+        </div>
+    </div>
+</div>
