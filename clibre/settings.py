@@ -129,5 +129,8 @@ MEDIA_URL = '/media/'
 
 # Email settings
 
+ADMINS = [('Clibre', 'clibre@clibre.ca')]
 EMAIL_PORT = 1025
 EMAIL_HOST = "localhost"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_SUBJECT_PREFIX = "[CONTACT CLIBRE]"

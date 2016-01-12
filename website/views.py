@@ -14,5 +14,9 @@ def index(request):
 
 def merci(request):
     nom = request.GET["nom"]
-    context = {"sender":nom}
-    return HttpResponse(json.dumps(context), content_type="application/json")
+    courriel = request.GET["courriel"]
+    message = request.GET["message"]
+    if nom and courriel and message:
+        send_mail("[CONTACT CLIBRE de " + nom + "]", message, courriel, ["clibre@clibre,ca"])
+        return HttpResponse(json.dumps({"envoye":1}), content_type="application/json")
+    return HttpResponse(json.dumps({"envoye":0}), content_type="application/json")
