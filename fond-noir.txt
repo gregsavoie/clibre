@@ -1,0 +1,2 @@
+branch servant à tester la page d'acceuil avec un fond noir au lieu
+de transparent pour le header.
