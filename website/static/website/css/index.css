@@ -90,11 +90,13 @@ body {
 
 .page-1ere {
     margin-top: 20%;
-    background-color: transparent;
+    text-align: center;
+    background-color: #333333;
+    opacity: 0.85;
 }
 
-.page-1ere {
-    text-align: center;
+.page-1ere h1, .page-1ere * {
+    color: #f4f4f0;
 }
 
 blockquote {
