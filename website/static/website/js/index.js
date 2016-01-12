@@ -32,9 +32,9 @@ function merci() {
             error: function(data) {
             }
         });
-        var nom = document.getElementById("id_nom").value = "";
-        var courriel = document.getElementById("id_courriel").value = "";
-        var message = document.getElementById("id_message").value = "";
+        document.getElementById("id_nom").value = "";
+        document.getElementById("id_courriel").value = "";
+        document.getElementById("id_message").value = "";
     } else {
         $(".msg-erreur").css("visibility", "visible");
     }
