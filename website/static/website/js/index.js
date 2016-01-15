@@ -24,9 +24,15 @@ function merci() {
             data: {"nom":nom, "courriel":courriel, "message":message},
             success: function(data) {
                 $(".contact-block").children().remove();
-                var merci = $("<h1></h1>").attr("class", "text-center").text("Merci " + nom + "!");
-                var para = $("<p></p>").attr("class", "text-center").text("Votre message a été transmis.");
-                var wrapper = $("<div></div>").append(merci).append(para).css("margin-top", "25%");
+                if(data.envoye == 1) {
+                    var merci = $("<h1></h1>").attr("class", "text-center").text("Merci " + nom + "!");
+                    var para = $("<p></p>").attr("class", "text-center").text("Votre message a été transmis.");
+                    var wrapper = $("<div></div>").append(merci).append(para).css("margin-top", "25%");
+                } else {
+                    var lien = $("<a></a>").attr("href", "mailto:clibre@clibre.ca").text("clibre@clibre.ca");
+                    var probleme = $("<p></p>").attr("class", "text-center").text("Un problème est survenu lors de l'envoie du message. Réessayez plus tard ou contactez les administrateur: ").append(lien);
+                    var wrapper = $("<div></div>").append(probleme).css("margin-top", "25%");
+                }
                 $(".contact-block").append(wrapper);
             },
             error: function(data) {

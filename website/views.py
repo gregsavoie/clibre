@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from django.http import Http404
 from .models import Post
 from .forms import ContactForm
-from django.core.mail import send_mail
+from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 import json
 
@@ -17,6 +17,9 @@ def merci(request):
     courriel = request.GET["courriel"]
     message = request.GET["message"]
     if nom and courriel and message:
-        send_mail("[CONTACT CLIBRE de " + nom + "]", message, courriel, ["clibre@clibre,ca"])
+        try:
+            send_mail("[CONTACT CLIBRE de " + nom + "]", message, courriel, ["clibre@clibre,ca"])
+        except BadHeaderError:
+            return HttpResponse(json.dumps({"envoye":0}), content_type="application/json")
         return HttpResponse(json.dumps({"envoye":1}), content_type="application/json")
     return HttpResponse(json.dumps({"envoye":0}), content_type="application/json")
