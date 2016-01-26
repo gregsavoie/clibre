@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
-import os
+import os, socket
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,9 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-!ps)jm@wafrn1!az7h3%mu$n5h=f++*=lmxer09_b0_noz3+w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if socket.gethostname() == "comite":
+    DEBUG = False
+    ALLOWED_HOSTS = ['www.clibre.uqam.ca']
+else:
+    DEBUG = True
+    ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -129,8 +133,12 @@ MEDIA_URL = '/media/'
 
 # Email settings
 
+if socket.gethostname() == "comite":
+    EMAIL_PORT = 25
+else:
+    EMAIL_PORT = 1025
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
 ADMINS = [('Clibre', 'clibre@clibre.ca')]
-EMAIL_PORT = 1025
 EMAIL_HOST = "localhost"
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-EMAIL_SUBJECT_PREFIX = "[CONTACT CLIBRE]"
+EMAIL_SUBJECT_PREFIX = "[CLIBRE WEBSITE]"

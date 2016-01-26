@@ -47,7 +47,7 @@ function merci() {
 };
 
 var resize = function() {
-    if($(window).width() < 754) {
+    if($(window).width() <= 767) {
         $(".nav-filler").remove();
         $(".links").bind("click", function() {
             $(".navbar-toggle").click();
@@ -112,6 +112,11 @@ var scrollSpy = function() {
     }
 };
 
+var createCopyright = function() {
+    var annee = new Date().getFullYear();
+    $(".copy").append(annee);
+}
+
 $(document).ready(function() {
     $(".wrapper").css("min-height", $(window).height() - 50);
     $(".acceuil").css("min-height", $(window).height());
@@ -125,4 +130,5 @@ $(document).ready(function() {
     $(window).bind("resize", resize);
     $(window).bind("scroll", scrollDownResponse);
     $(window).bind("scroll", scrollSpy);
+    createCopyright();
 });

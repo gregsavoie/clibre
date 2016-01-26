@@ -97,6 +97,16 @@ body {
     text-align: center;
 }
 
+.quote {
+    background-color: #333333;
+    opacity: 0.85;
+    border-radius: 5px;
+}
+
+.quote em {
+    color: #fff;
+}
+
 blockquote {
     margin-right: 2%;
 }
@@ -120,7 +130,7 @@ blockquote {
     margin: 6% 0;
 }
 
-/* style de la page nouvlles */
+/* style de la page nouvelles */
 
 .nouvelles .row{
     margin-top: 5%;
@@ -169,24 +179,10 @@ blockquote {
     margin-top: 8%;
     margin-bottom: 12%;
 }
-.sm-icon {
-    display: inline-block;
-}
 
-.sm-icon {
-    margin-left: 40%;
-}
-
-.sm-icon:focus {
+.fb-link:focus {
     outline: 0;
-}
 
-.sm-icon2 {
-    margin-left: 5%;
-}
-
-.sm-icon:hover {
-    opacity: 0.4;
 }
 
 .msg-erreur {
