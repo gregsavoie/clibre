@@ -18,7 +18,7 @@ def merci(request):
     message = request.GET["message"]
     if nom and courriel and message:
         try:
-            send_mail("[CONTACT CLIBRE de " + nom + "]", message, courriel, ["clibre@clibre,ca"])
+            send_mail("[CONTACT CLIBRE de " + nom + "]", message, courriel, ["contact@clibre.uqam.ca"])
         except BadHeaderError:
             return HttpResponse(json.dumps({"envoye":0}), content_type="application/json")
         return HttpResponse(json.dumps({"envoye":1}), content_type="application/json")

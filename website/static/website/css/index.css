@@ -185,6 +185,11 @@ blockquote {
 
 }
 
+.github-link:focus {
+    outline: 0;
+
+}
+
 .msg-erreur {
     color: red;
     font-size: 0.85em;

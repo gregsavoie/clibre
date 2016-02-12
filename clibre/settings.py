@@ -25,7 +25,7 @@ SECRET_KEY = '-!ps)jm@wafrn1!az7h3%mu$n5h=f++*=lmxer09_b0_noz3+w'
 # SECURITY WARNING: don't run with debug turned on in production!
 if socket.gethostname() == "comite":
     DEBUG = False
-    ALLOWED_HOSTS = ['www.clibre.uqam.ca']
+    ALLOWED_HOSTS = ['www.clibre.uqam.ca', 'clibre.uqam.ca']
 else:
     DEBUG = True
     ALLOWED_HOSTS = []
@@ -139,6 +139,6 @@ else:
     EMAIL_PORT = 1025
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-ADMINS = [('Clibre', 'clibre@clibre.ca')]
+ADMINS = [('Clibre', 'greg.savoie23@gmail.ca')]
 EMAIL_HOST = "localhost"
 EMAIL_SUBJECT_PREFIX = "[CLIBRE WEBSITE]"
