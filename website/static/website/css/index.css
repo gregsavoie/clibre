@@ -340,3 +340,10 @@ only screen and (max-device-width : 330x){
         margin-top: 8%;
     }
 }
+
+@media only screen and (max-width : 300px),
+only screen and (max-device-width : 300x){
+    .credits {
+        font-size: 0.5em;
+    }
+}

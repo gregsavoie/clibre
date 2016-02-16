@@ -139,6 +139,6 @@ else:
     EMAIL_PORT = 1025
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-ADMINS = [('Clibre', 'greg.savoie23@gmail.ca')]
+ADMINS = [('Clibre', 'greg.savoie23@gmail.com')]
 EMAIL_HOST = "localhost"
 EMAIL_SUBJECT_PREFIX = "[CLIBRE WEBSITE]"
