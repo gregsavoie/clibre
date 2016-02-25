@@ -165,6 +165,10 @@ blockquote {
     background-color: inherit;
 }
 
+.fb-page {
+    left: 22%;
+}
+
 /* style de la page contact */
 
 .contact {
@@ -212,7 +216,7 @@ blockquote {
 /* media queries */
 
 @media only screen and (max-width : 991px),
-only screen and (max-device-width : 991x){
+only screen and (max-device-width : 991px){
     .a-propos h1 {
         margin-top: 8%;
     }
@@ -241,6 +245,17 @@ only screen and (max-device-width : 991x){
         margin-bottom: 6%;
     }
 
+    .fb-page {
+        left: 34%;
+    }
+
+}
+
+@media only screen and (max-width : 916px),
+only screen and (max-device-width : 916px){
+    .fb-page {
+        left: 30%;
+    }
 }
 
 @media only screen and (max-width : 767px),
@@ -276,6 +291,13 @@ only screen and (max-device-width : 767x){
     }
 }
 
+@media only screen and (max-width : 727px),
+only screen and (max-device-width : 727x){
+    .fb-page {
+        left: 25%;
+    }
+}
+
 @media only screen and (max-width : 636px),
 only screen and (max-device-width : 636px){
     .a-propos h1 {
@@ -287,6 +309,10 @@ only screen and (max-device-width : 636px){
 only screen and (max-device-width : 604x){
     .contact .sm-icon1 {
         margin-left: 40%;
+    }
+    
+    .fb-page {
+        left: 20%;
     }
 }
 
@@ -302,6 +328,10 @@ only screen and (max-device-width : 500x){
     .a-propos img {
         margin-left: 30%;
     }
+
+    .fb-page {
+        left: 12%;
+    }
 }
 
 @media only screen and (max-width : 450px),
@@ -312,6 +342,10 @@ only screen and (max-device-width : 450x){
 
     .nouvelles .contactez-nous {
         margin-left: 28%;
+    }
+
+    .fb-page {
+        left: 0%;
     }
 }
 
@@ -339,11 +373,19 @@ only screen and (max-device-width : 330x){
     .nouvelles .panel {
         margin-top: 8%;
     }
+
+    .fb-page {
+        width: 250px;
+    }
 }
 
 @media only screen and (max-width : 300px),
 only screen and (max-device-width : 300x){
     .credits {
         font-size: 0.5em;
+    }
+
+    .fb-page {
+        width: 200px;
     }
 }
