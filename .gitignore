@@ -60,3 +60,9 @@ target/
 
 # database files
 *.db
+
+# virtual environment directory
+venv/*
+
+# swap files
+*.swp
