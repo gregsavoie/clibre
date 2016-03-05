@@ -12,10 +12,11 @@ import os, sys, site
 from django.core.wsgi import get_wsgi_application
 from django.conf import settings
 
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+os.environ["DJANGO_SETTINGS_MODULE"] = "clibre.settings"
 site.addsitedir(settings.BASE_DIR + "/venv/lib/python3.4/site-packages")
 sys.path.append(settings.BASE_DIR)
 sys.path.append(settings.BASE_DIR + "/clibre")
-os.environ["DJANGO_SETTINGS_MODULE"] = "clibre.settings"
 activate_env=settings.BASE_DIR + "/venv/bin/activate_this.py"
 exec(open(activate_env, 'r').read())
 
